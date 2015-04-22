@@ -119,7 +119,7 @@ public class Concursants {
     /** Llistar
     *
     * @param dadesAMostrar array que indica quines dades s'han de mostrar (true, false,...)
-    * @param ordre indica l'index que s'ha d'utilitzar.
+    * @param ordre indica l'index que s'ha d'utilitzar. 0 cognoms, 1 puntuacio
     * @param formatDades array amb el format de les dades per a 
     * @param sortida 
     */
