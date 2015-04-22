@@ -12,13 +12,13 @@ public class SortidaPantalla {
     public final String[][] formatDades = { {"DNI", "%-9s", "%9s"}, 
                                          {"NOM", "%-15s", "%-15s"}, 
                                          {"COGNOMS", "%-25s", "%-25s"},
-                                         {"TELEFON", "%-12s", "%12s"},
+                                         {"TELEFON", "%-12s", "%-12s"},
                                          {"PUNTS", "%-5s", "%5d"}};
     
     public final String[][] formatDadesTwitter = { {"DNI", "%-9s", "%9s"}, 
                                          {"NOM", "%-15s", "%-15s"}, 
                                          {"COGNOMS", "%-16s", "%-16s"},
-                                         {"TELEFON", "%-12s", "%12s"},
+                                         {"TELEFON", "%-12s", "%-12s"},
                                          {"PUNTS", "%-5s", "%5d"}};
     
     /** Mostra menú d'opcions.
