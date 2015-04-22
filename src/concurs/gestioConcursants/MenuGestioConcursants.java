@@ -111,10 +111,12 @@ public class MenuGestioConcursants {
             
             switch(opcio){
                 case 1:
+                    System.out.println("Llista localització:");
                     //Llista localització, totes les dades excepte puntuació
                     llistaConcursants.llistar(new boolean[] {true, true, true, true, false}, 0, sortida.formatDades, sortida);
                     break;
                 case 2:
+                    System.out.println("Llista Twitter:");
                     //Llista twitter, nom i cognoms. Màxim 38 caràcters.
                     llistaConcursants.llistar(new boolean[] {false, true, true, false, false}, 0, sortida.formatDadesTwitter, sortida);
                     break;
