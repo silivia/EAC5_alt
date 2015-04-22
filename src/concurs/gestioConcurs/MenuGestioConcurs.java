@@ -44,14 +44,46 @@ public class MenuGestioConcurs {
                     dadesConcurs.finalitzarRonda(entrada, sortida, llistaConcursants);
                     break;
                 case 4:
-                    //Concurs.Dades.Qualificacions.llistarQualificacionsTwitter();
+                    //Llistar classificats/eliminats twitter
+                    menuLlistatQualificacionsTwitter(entrada, sortida, llistaConcursants, dadesConcurs);
+                    //dadesConcurs.llistarQualificacionsTwitter(entrada, sortida, llistaConcursants);
                     break;					
-                case 5:
-                    //Concurs.Principal.menu();
+                default:
+                    break;
+            }
+        }while(opcio != (OPCIONS_MENU.length-1) );
+    }
+    
+    /**
+     * Menú per a mostrar els concursants eliminats i classificats l'última ronda.
+     *
+     * @param entrada referència a la variable general d'entrada de dades
+     * @param sortida referència a la variable general de sortida de dades
+     * @param llistaConcursants referència a la variable que conté la llista de concursants
+     */
+    private void menuLlistatQualificacionsTwitter(EntradaTeclat entrada, SortidaPantalla sortida, Concursants llistaConcursants, Concurs dadesConcurs){
+        final String[] OPCIONS_MENU ={"Llistes Twitter de l'última ronda:","Classificats","Eliminats","Tornar"};
+        int opcio;
+        
+        do{
+            sortida.menu(OPCIONS_MENU);
+            opcio = entrada.opcioMenu(OPCIONS_MENU.length);
+            
+            switch(opcio){
+                case 1:
+                    System.out.println("Concursants que s'han classificat:");
+                    dadesConcurs.llistarQualificacionsTwitter(0, entrada, sortida, llistaConcursants);
+                    //llistaConcursants.llistar(new boolean[] {false, true, true, false, false}, 1, sortida.formatDades, sortida);
+                    break;
+                case 2:
+                    System.out.println("Concursants que han estat eliminats:");
+                    dadesConcurs.llistarQualificacionsTwitter(1, entrada, sortida, llistaConcursants);
+                    //llistaConcursants.llistar(new boolean[] {false, true, true, false, false}, 1, sortida.formatDadesTwitter, sortida);
                     break;
                 default:
                     break;
             }
         }while(opcio != (OPCIONS_MENU.length-1) );
+        
     }
 }
