@@ -12,6 +12,7 @@ import concurs.interficie.SortidaPantalla;
 public class Concurs {
     public int ronda=0;
     public int puntuacioTall=0;
+    public int puntuacioTallAnterior=0;
     
     /** Puntua a cada concursant
     *
@@ -48,6 +49,22 @@ public class Concurs {
         for (int i=0; i < llistaConcursants.length(); i++){
             if(llistaConcursants.dadesConcursant(i).puntuacio >= puntuacioTall){ //S'ha classificat a l'última ronda
                 sortida.mostrarConcursant(llistaConcursants.dadesConcursant(i), new boolean[] {true, true, true, true, true}, sortida.formatDades);
+            }
+        }
+    }
+    
+    /** Finalitza la ronda.
+    *
+    * @param entrada
+    * @param sortida
+    * @param llistaConcursants
+    */
+    public void finalitzarRonda(EntradaTeclat entrada, SortidaPantalla sortida, Concursants llistaConcursants) {
+        puntuacioTallAnterior = puntuacioTall;
+        //buscar puntuació màxima
+        for (int i=0; i < llistaConcursants.length(); i++){
+            if(llistaConcursants.dadesConcursant(i).puntuacio > puntuacioTall){
+                puntuacioTall = llistaConcursants.dadesConcursant(i).puntuacio;
             }
         }
     }
