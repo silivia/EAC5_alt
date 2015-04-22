@@ -69,6 +69,36 @@ public class Concurs {
         }
         System.out.println("S'ha procedit a classificar i eliminar els jugadors de la ronda actual per a la ronda següent.");
         ronda++;
-        
     }
+    
+    /** Llistar classificats/eliminats twitter
+    *
+    * @param tipus 0=classificats, 1=eliminats
+    * @param entrada
+    * @param sortida
+    * @param llistaConcursants
+    */
+    public void llistarQualificacionsTwitter(int tipus, EntradaTeclat entrada, SortidaPantalla sortida, Concursants llistaConcursants) {
+        //puntuacioTallAnterior = puntuacioTall;
+        sortida.mostrarCapcaleraLlista(new boolean[] {false, true, true, false, true}, sortida.formatDadesTwitter);
+        int[] ordre = llistaConcursants.index(1);
+        
+        //mostrar classificats
+        if( tipus == 0 ){
+            for (int i=0; i < llistaConcursants.length(); i++){
+                if(llistaConcursants.dadesConcursant(ordre[i]).puntuacio > puntuacioTall){
+                    sortida.mostrarConcursant(llistaConcursants.dadesConcursant(ordre[i]), new boolean[] {false, true, true, false, true}, sortida.formatDadesTwitter);
+                }
+            }
+        }else{
+            //mostrar eliminats
+            for (int i=0; i < llistaConcursants.length(); i++){
+                if(llistaConcursants.dadesConcursant(ordre[i]).puntuacio < puntuacioTall && llistaConcursants.dadesConcursant(ordre[i]).puntuacio >= puntuacioTallAnterior){
+                    sortida.mostrarConcursant(llistaConcursants.dadesConcursant(ordre[i]), new boolean[] {false, true, true, false, true}, sortida.formatDadesTwitter);
+                }
+            }
+        }
+
+    }
+    
 }
