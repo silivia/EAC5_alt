@@ -13,12 +13,7 @@ public class Concurs {
     public int ronda=0;
     public int puntuacioTall=0;
     
-    /** Inicialitza la llista de concursants
-    *
-    * @param numConcursants número màxim de concursants.
-    */
-    
-    /** Inicialitza la llista de concursants
+    /** Puntua a cada concursant
     *
     * @param entrada
     * @param sortida
@@ -30,7 +25,7 @@ public class Concurs {
         sortida.mostrarCapcaleraLlista(new boolean[] {false, true, true, false, false}, sortida.formatDades);
         
         for (int i=0; i < llistaConcursants.length(); i++){
-            if(llistaConcursants.dadesConcursant(i).puntuacio >= puntuacioTall){
+            if(llistaConcursants.dadesConcursant(i).puntuacio >= puntuacioTall){ //S'ha classificat a l'última ronda
                 sortida.mostrarConcursant(llistaConcursants.dadesConcursant(i), new boolean[] {false, true, true, false, false}, sortida.formatDades);
                 //demanar i verificar puntuació 
                 puntuacioRonda = entrada.solicitarPuntuacio();
@@ -41,5 +36,19 @@ public class Concurs {
     
         
     }
-
+    
+    /** Puntua a cada concursant
+    *
+    * @param entrada
+    * @param sortida
+    * @param llistaConcursants
+    */
+    public void llistarQualificacions(EntradaTeclat entrada, SortidaPantalla sortida, Concursants llistaConcursants) {
+        sortida.mostrarCapcaleraLlista(new boolean[] {true, true, true, true, true}, sortida.formatDades);
+        for (int i=0; i < llistaConcursants.length(); i++){
+            if(llistaConcursants.dadesConcursant(i).puntuacio >= puntuacioTall){ //S'ha classificat a l'última ronda
+                sortida.mostrarConcursant(llistaConcursants.dadesConcursant(i), new boolean[] {true, true, true, true, true}, sortida.formatDades);
+            }
+        }
+    }
 }
