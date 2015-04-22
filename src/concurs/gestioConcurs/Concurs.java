@@ -67,5 +67,8 @@ public class Concurs {
                 puntuacioTall = llistaConcursants.dadesConcursant(i).puntuacio;
             }
         }
+        System.out.println("S'ha procedit a classificar i eliminar els jugadors de la ronda actual per a la ronda següent.");
+        ronda++;
+        
     }
 }
