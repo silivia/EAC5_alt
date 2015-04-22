@@ -18,7 +18,7 @@ public class MenuGestioConcurs {
      * @param dadesConcurs referència a la variable que conté els mètodes de gestió del concurs
      */
     public void menu(EntradaTeclat entrada, SortidaPantalla sortida, Concursants llistaConcursants, Concurs dadesConcurs){
-        final String[] OPCIONS_MENU ={"Gestió Qualificacions","Iniciar concurs","Puntuar ronda actual","Llistar qualificacions ronda","Finalitzar ronda",
+        final String[] OPCIONS_MENU ={"Gestió Qualificacions","Puntuar ronda actual","Llistar qualificacions ronda","Finalitzar ronda",
                                       "Llistar qualificacions pel twitter","Tornar"};
         int opcio;
         
@@ -29,25 +29,24 @@ public class MenuGestioConcurs {
 
             switch(opcio){
                 case 1:
-                    //Publicar llista twitter
-                    llistaConcursants.llistar(new boolean[] {false, true, true, false, false}, 0, sortida.formatDadesTwitter, sortida);
-                    //dadesConcurs.llistar
-                    break;
-                case 2:
+                    //puntuar concursants ronda actual
                     dadesConcurs.puntuar(entrada, sortida, llistaConcursants);
                     break;
-                case 3:
+                case 2:
+                    //llistar qualificacions ronda
+                    dadesConcurs.llistarQualificacions(entrada, sortida, llistaConcursants);
                     //Concurs.Dades.Qualificacions.llistarQualificacionsRonda();
                     //dadesConcurs.llistar(new boolean[] {false, true, true, false, false}, 0, sortida.formatDadesTwitter, sortida); 
                     
                     break;
-                case 4:
-                    //Concurs.Dades.Qualificacions.finalitzarRonda();
+                case 3:
+                    //finalitzar ronda
+                    dadesConcurs.finalitzarRonda(entrada, sortida, llistaConcursants);
                     break;
-                case 5:
+                case 4:
                     //Concurs.Dades.Qualificacions.llistarQualificacionsTwitter();
                     break;					
-                case 6:
+                case 5:
                     //Concurs.Principal.menu();
                     break;
                 default:
