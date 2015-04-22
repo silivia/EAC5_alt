@@ -6,7 +6,7 @@ import concurs.interficie.SortidaPantalla;
 
 /**
  *
- * @author Llorenç Garcia Martinez
+ * @author Llorenç Garcia Martinez, Jose Isern Barceló, Silvia Toro García
  */
 public class MenuGestioConcurs {
      /**

@@ -12,7 +12,7 @@ import concurs.gestioConcurs.MenuGestioConcurs;
 
 /**
  *
- * @author Llorenç Garcia Martinez
+ * @author Llorenç Garcia Martinez, Jose Isern Barceló, Silvia Toro García
  */
 public class Eac5 {
     public static final int MAX_CONCURSANTS = 15;

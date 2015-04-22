@@ -2,7 +2,7 @@ package concurs.gestioConcursants;
 
 /**
  *
- * @author Llorenç Garcia Martinez
+ * @author Llorenç Garcia Martinez, Jose Isern Barceló, Silvia Toro García
  */
 
 import concurs.interficie.EntradaTeclat;

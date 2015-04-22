@@ -4,7 +4,7 @@ import concurs.gestioConcursants.Concursant;
 
 /**
  *
- * @author Llorenç Garcia Martinez
+ * @author Llorenç Garcia Martinez, Jose Isern Barceló, Silvia Toro García
  */
 public class SortidaPantalla {
     String newLine = System.getProperty("line.separator");
