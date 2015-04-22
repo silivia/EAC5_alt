@@ -211,4 +211,8 @@ public class Concursants {
         return lengthLlistaConcursants;
     }
     
+    public int[] index(int ordre){
+        return indexs[ordre];
+    }
+    
 }
