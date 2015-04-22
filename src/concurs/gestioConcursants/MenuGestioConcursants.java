@@ -44,8 +44,8 @@ public class MenuGestioConcursants {
                     menuModificarDades(entrada, sortida, llistaConcursants);
                     break;
                 case 3:
-                    System.out.println("Llistat de concursants inscrits:");
-                    llistaConcursants.llistar(new boolean[] {true, true, true, true, false}, 0, sortida.formatDades, sortida);
+                    //Mostrar llistat localització o twitter inicial.
+                    menuLlistatConcursants(entrada, sortida, llistaConcursants);
                     break;
                 default:
                     break;
@@ -102,7 +102,27 @@ public class MenuGestioConcursants {
     }
     
     private void menuLlistatConcursants(EntradaTeclat entrada, SortidaPantalla sortida, Concursants llistaConcursants){
-        final String[] OPCIONS_MENU ={"Llistes disponibles:","Localització","Twitter","Cap"};
+        final String[] OPCIONS_MENU ={"Llistes de concursants inscrits:","Localització","Twitter","Tornar"};
+        int opcio;
+        
+        do{
+            sortida.menu(OPCIONS_MENU);
+            opcio = entrada.opcioMenu(OPCIONS_MENU.length);
+            
+            switch(opcio){
+                case 1:
+                    //Llista localització, totes les dades excepte puntuació
+                    llistaConcursants.llistar(new boolean[] {true, true, true, true, false}, 0, sortida.formatDades, sortida);
+                    break;
+                case 2:
+                    //Llista twitter, nom i cognoms. Màxim 38 caràcters.
+                    llistaConcursants.llistar(new boolean[] {false, true, true, false, false}, 0, sortida.formatDadesTwitter, sortida);
+                    break;
+                default:
+                    break;
+            }
+        }while(opcio != (OPCIONS_MENU.length-1) );
+        
     }
 }
 
